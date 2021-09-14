@@ -1,0 +1,22 @@
+<?php
+//ob_start();
+$con = mysqli_connect('localhost', 'udeemy_umamahesh', 'Bala@2019','udeemy_register');
+
+//User: udeemy_umamahesh
+//Database: udeemy_register
+
+
+if(isset($_POST['bala']))
+{
+         $box1= mysqli_real_escape_string($con,$_POST["fname"]);
+	  $box2= mysqli_real_escape_string($con,$_POST["uemail"]);
+	   $box3= mysqli_real_escape_string($con,$_POST["upwd"]);
+	    $box4= mysqli_real_escape_string($con,$_POST["uphone"]);
+	     $box5= mysqli_real_escape_string($con,$_POST["ucollege"]);
+		 
+		  
+	 $cld =  mysqli_query($con,"INSERT INTO mydata (`name`, `email`,  `pwd`,  `phone`, `clg`) 
+	 VALUES ('".$box1."', '".$box2."', '".$box3."', '".$box4."',  '".$box5."');");
+		 
+}
+?>
